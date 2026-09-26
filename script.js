@@ -149,6 +149,7 @@ function createCourseCard(item) {
 
 function createDiplomaCard(item) {
     const title = escapeHTML(item.title);
+    const image = getCatalogImage();
 
     return `
         <article
