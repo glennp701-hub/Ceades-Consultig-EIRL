@@ -1476,3 +1476,34 @@ section {
  .hero-text > p { font-size:14px; }
  .hero-text > p strong { font-size:17px; }
 }
+/* Presentación elegante del lema institucional */
+.hero-institute-title {
+    letter-spacing: -0.8px;
+    text-wrap: balance;
+}
+.hero-institute-title span {
+    position: relative;
+    color: #315b8f;
+    font-style: italic;
+    letter-spacing: .1px;
+    font-weight: 500;
+    padding-left: 18px;
+}
+.hero-institute-title span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    bottom: 3px;
+    width: 3px;
+    border-radius: 3px;
+    background: #2563eb;
+}
+.hero-text > p strong {
+    letter-spacing: .3px;
+}
+@media (max-width:600px) {
+    .hero-institute-title span {
+        padding-left: 13px;
+    }
+}
