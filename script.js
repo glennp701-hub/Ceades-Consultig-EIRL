@@ -78,18 +78,41 @@ function whatsappURL(title, type) {
     return `https://wa.me/51921878645?text=${encodeURIComponent(message)}`;
 }
 
+const COURSE_IMAGES = [
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-03-31%20at%207.20.32%20PM.jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.10%20AM%20(1).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.10%20AM.jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.11%20AM%20(1).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.11%20AM%20(2).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.11%20AM%20(3).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.11%20AM%20(4).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.11%20AM%20(5).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.11%20AM.jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.25.08%20AM%20(1).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.25.08%20AM%20(2).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.25.08%20AM%20(3).jpeg",
+    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.25.08%20AM.jpeg"
+];
+
+let visualImageIndex = 0;
+function getCatalogImage() {
+    const image = COURSE_IMAGES[visualImageIndex % COURSE_IMAGES.length];
+    visualImageIndex++;
+    return image;
+}
+
 function createCourseCard(item) {
     const title = escapeHTML(item.title);
     const icon = getIcon(item.title, item.type);
+    const image = getCatalogImage();
 
     return `
         <article
             class="course-card catalog-card"
             data-title="${escapeHTML(normalizeText(item.title))}"
         >
-            <div class="course-image catalog-image related-visual">
-                <span class="visual-icon">${icon}</span>
-                <span class="visual-label">CAPACITACIÓN</span>
+            <div class="course-image catalog-image">
+                <img src="${image}" alt="Imagen de capacitación" loading="lazy">
             </div>
 
             <div class="course-content">
@@ -132,9 +155,8 @@ function createDiplomaCard(item) {
             class="diploma-card catalog-card"
             data-title="${escapeHTML(normalizeText(item.title))}"
         >
-            <div class="diploma-image related-visual">
-                <span class="visual-icon">🎓</span>
-                <span class="visual-label">ESPECIALIZACIÓN</span>
+            <div class="diploma-image">
+                <img src="${image}" alt="Imagen de diplomado" loading="lazy">
             </div>
 
             <div>
