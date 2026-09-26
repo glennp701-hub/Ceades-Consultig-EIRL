@@ -26,64 +26,6 @@ let currentResults = [];
 
 const HOME_COURSES_LIMIT = 6;
 const HOME_DIPLOMAS_LIMIT = 6;
-const PROMOTION_WHATSAPP_MESSAGE =
-    "Hola Ceades Consultig E.I.R.L., quiero información sobre la promoción anunciada.";
-
-function getCatalogImage(title = "") {
-    const normalized = normalizeText(title);
-    let hash = 0;
-
-    for (let i = 0; i < normalized.length; i++) {
-        hash = (hash * 31 + normalized.charCodeAt(i)) >>> 0;
-    }
-
-    const file =
-        SITE_IMAGE_FILES[hash % SITE_IMAGE_FILES.length];
-
-    return "./" + encodeURIComponent(file);
-}
-
-function createPromotionAnnouncement() {
-    if (document.getElementById("promotionAnnouncement")) return;
-
-    const overlay = document.createElement("div");
-    overlay.id = "promotionAnnouncement";
-    overlay.innerHTML = `
-        <div class="promotion-overlay" role="dialog" aria-modal="true" aria-label="Anuncio promocional">
-            <div class="promotion-box">
-                <button class="promotion-close" type="button" aria-label="Cerrar anuncio">×</button>
-                <a
-                    href="https://wa.me/51921878645?text=${encodeURIComponent(PROMOTION_WHATSAPP_MESSAGE)}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Consultar promoción por WhatsApp"
-                >
-                    <img
-                        src="${encodeURIComponent(PROMOTION_IMAGE_FILE)}"
-                        alt="Anuncio promocional de Ceades Consultig E.I.R.L. - Consultar por WhatsApp"
-                        class="promotion-image"
-                    >
-                </a>
-            </div>
-        </div>
-    `;
-
-    document.body.appendChild(overlay);
-
-    overlay.querySelector(".promotion-close")?.addEventListener("click", () => {
-        overlay.remove();
-    });
-
-    overlay.querySelector(".promotion-overlay")?.addEventListener("click", event => {
-        if (event.target.classList.contains("promotion-overlay")) {
-            overlay.remove();
-        }
-    });
-}
-
-
-
-
 function normalizeText(value = "") {
     return String(value)
         .normalize("NFD")
