@@ -42,8 +42,7 @@ const SITE_IMAGE_FILES = [
     "WhatsApp Image 2026-09-19 at 7.25.08 AM.jpeg",
 ];
 
-const PROMOTION_IMAGE_FILE =
-    "https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/PROMOCION.jpeg";
+const PROMOTION_IMAGE_FILE = "PROMOCION.jpeg";
 
 const PROMOTION_WHATSAPP_MESSAGE =
     "Hola Ceades Consultig E.I.R.L., quiero información sobre la promoción anunciada.";
@@ -78,7 +77,7 @@ function createPromotionAnnouncement() {
                     aria-label="Consultar promoción por WhatsApp"
                 >
                     <img
-                        src="${"./" + encodeURIComponent(PROMOTION_IMAGE_FILE)}"
+                        src="${encodeURIComponent(PROMOTION_IMAGE_FILE)}"
                         alt="Anuncio promocional de Ceades Consultig E.I.R.L. - Consultar por WhatsApp"
                         class="promotion-image"
                     >
@@ -169,7 +168,7 @@ function createCourseCard(item) {
                     src="${getCatalogImage(item.title)}"
                     alt="${title}"
                     loading="lazy"
-                    onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/glennp701-hub/J-M-sac-Capacitation/main/WhatsApp%20Image%202026-09-19%20at%207.20.10%20AM.jpeg';"
+                    onerror="this.onerror=null; this.src='./WhatsApp%20Image%202026-09-19%20at%207.20.10%20AM.jpeg';"
                 >
             </div>
 
