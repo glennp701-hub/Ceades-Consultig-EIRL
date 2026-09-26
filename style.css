@@ -1453,3 +1453,7 @@ section {
         max-height: 180px;
     }
 }
+
+
+/* Identidad visual de Ceades */
+.logo-text{display:block;font-weight:800;line-height:1.05;color:#0b1f3a;font-size:18px;letter-spacing:.4px;white-space:nowrap}.logo-text small{font-size:10px;letter-spacing:.8px}.hero-institute-title{font-size:clamp(26px,4vw,44px);font-weight:800;line-height:1.05;color:#0b1f3a;margin:8px 0 24px}.hero-institute-title span{display:block;font-size:13px;letter-spacing:1.5px;margin-top:10px;color:#2563eb}.related-visual{flex-direction:column;gap:8px;text-align:center}.related-visual .visual-icon{font-size:58px;line-height:1}.related-visual .visual-label{font-size:12px;font-weight:800;letter-spacing:1.2px;color:#0b1f3a}.diploma-image.related-visual{height:190px;margin:-30px -30px 25px;width:calc(100% + 60px)}
