@@ -26,24 +26,6 @@ let currentResults = [];
 
 const HOME_COURSES_LIMIT = 6;
 const HOME_DIPLOMAS_LIMIT = 6;
-const SITE_IMAGE_FILES = [
-    "WhatsApp Image 2026-03-31 at 7.20.32 PM.jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.10 AM (1).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.10 AM.jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.11 AM (1).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.11 AM (2).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.11 AM (3).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.11 AM (4).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.11 AM (5).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.20.11 AM.jpeg",
-    "WhatsApp Image 2026-09-19 at 7.25.08 AM (1).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.25.08 AM (2).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.25.08 AM (3).jpeg",
-    "WhatsApp Image 2026-09-19 at 7.25.08 AM.jpeg",
-];
-
-const PROMOTION_IMAGE_FILE = "PROMOCION.jpeg";
-
 const PROMOTION_WHATSAPP_MESSAGE =
     "Hola Ceades Consultig E.I.R.L., quiero información sobre la promoción anunciada.";
 
@@ -99,7 +81,7 @@ function createPromotionAnnouncement() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", createPromotionAnnouncement);
+
 
 
 function normalizeText(value = "") {
@@ -163,13 +145,9 @@ function createCourseCard(item) {
             class="course-card catalog-card"
             data-title="${escapeHTML(normalizeText(item.title))}"
         >
-            <div class="course-image catalog-image">
-                <img
-                    src="${getCatalogImage(item.title)}"
-                    alt="${title}"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='./WhatsApp%20Image%202026-09-19%20at%207.20.10%20AM.jpeg';"
-                >
+            <div class="course-image catalog-image related-visual">
+                <span class="visual-icon">${icon}</span>
+                <span class="visual-label">CAPACITACIÓN</span>
             </div>
 
             <div class="course-content">
@@ -212,12 +190,9 @@ function createDiplomaCard(item) {
             class="diploma-card catalog-card"
             data-title="${escapeHTML(normalizeText(item.title))}"
         >
-            <div class="diploma-image">
-                <img
-                    src="${getCatalogImage(item.title)}"
-                    alt="${title}"
-                    loading="lazy"
-                >
+            <div class="diploma-image related-visual">
+                <span class="visual-icon">🎓</span>
+                <span class="visual-label">ESPECIALIZACIÓN</span>
             </div>
 
             <div>
