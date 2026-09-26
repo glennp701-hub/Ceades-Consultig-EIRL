@@ -1076,3 +1076,28 @@ catalogStyles.textContent = `
 document.head.appendChild(catalogStyles);
 
 loadCatalog();
+
+/* Anuncio promocional */
+const promotionOverlay = document.getElementById("promotionOverlay");
+const promotionClose = document.getElementById("promotionClose");
+
+function showPromotion() {
+    if (!promotionOverlay) return;
+    promotionOverlay.style.display = "flex";
+    promotionOverlay.setAttribute("aria-hidden", "false");
+}
+
+promotionClose?.addEventListener("click", () => {
+    promotionOverlay.style.display = "none";
+    promotionOverlay.setAttribute("aria-hidden", "true");
+});
+
+promotionOverlay?.addEventListener("click", (event) => {
+    if (event.target === promotionOverlay) {
+        promotionOverlay.style.display = "none";
+        promotionOverlay.setAttribute("aria-hidden", "true");
+    }
+});
+
+setTimeout(showPromotion, 900);
+
